@@ -1,18 +1,31 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 v-if="Me">{{ msg }}</h1>
+    <button @click="hello">Click Me</button>
+    <User name="lnwmee" bio="meeza meeza meeza"/>
   </div>
 </template>
 
 <script>
+import User from './User.vue'
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      Me: true,
+      msg: 'Hello Nakit'
     }
+  },
+  methods: {
+    hello: function () {
+      this.msg = 'Thank you for click on me :)'
+    }
+  },
+  components: {
+    User
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
